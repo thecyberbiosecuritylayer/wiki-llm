@@ -6,18 +6,13 @@ biological capabilities, credentials, source boundaries, or repository users.
 
 ## Report privately
 
-Do **not** open a public issue or pull request for a sensitive report. Once
-private vulnerability reporting is enabled for the public repository, use:
-
-1. the repository's **Security** tab;
-2. **Advisories**; and
-3. **Report a vulnerability**.
+Do **not** open a public issue or pull request for a sensitive report. GitHub
+Private Vulnerability Reporting is enabled for this repository. Use
+[Report a vulnerability](https://github.com/thecyberbiosecuritylayer/wiki-llm/security/advisories/new).
 
 Include only the detail needed to locate and assess the problem. If that button
-is not available, do not disclose the details publicly; private vulnerability
-reporting must be enabled before the repository begins accepting public
-security reports. This document should be updated if the project later adopts
-a dedicated private contact.
+is not available, do not place sensitive details in an issue or pull request.
+Withhold the details until a private route is available.
 
 Use the private route for:
 
@@ -60,6 +55,9 @@ They may coordinate with an affected source owner, vendor, institution, or
 authority when responsible disclosure requires it. No bug bounty or guaranteed
 response time is offered.
 
-Security support applies to the current default branch. Historical releases
-remain available for research but may not receive corrections other than a
-documented superseding release.
+Security support applies to the current default branch. Corrections are applied
+there and recorded in the next knowledge release. Published snapshots are not
+silently rewritten. If a release itself creates a privacy or safety exposure,
+maintainers may seek GitHub-assisted containment or removal and publish a
+documented superseding record. Privacy and safety take precedence over
+historical availability.

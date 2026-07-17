@@ -56,8 +56,8 @@ for more examples in both directions.
 | Explore biological AI risks, controls, benchmarks, and governance | [Biological-AI lifecycle synthesis](wiki/syntheses/syn-0029-biological-ai-lifecycle-threat-benchmark-governance-reconciliation.md) |
 | Compare nucleic-acid screening governance | [US–UK screening comparison](wiki/syntheses/syn-0002-us-uk-nucleic-acid-screening-comparison.md) |
 
-The complete subject map, search examples, current knowledge cutoff, and
-representative scenarios are in [`wiki/index.md`](wiki/index.md).
+The thematic routes, complete page-type directory map, search examples, and
+current knowledge cutoff are in [`wiki/index.md`](wiki/index.md).
 
 ## How the wiki reasons
 
@@ -161,13 +161,18 @@ identifier, local binding, coverage, and precise locators.
 Contributions are welcome. Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before
 opening an issue or pull request. Use [`SECURITY.md`](SECURITY.md), rather
 than a public issue, for privacy, re-identification, sensitive-capability, or
-security reports.
+security reports. Project authority is recorded in
+[`MAINTAINERS.md`](MAINTAINERS.md), and [`RELEASES.md`](RELEASES.md)
+distinguishes versioned knowledge snapshots from immutable evidence bundles.
 
 Original wiki content and project documentation are available under
 [CC BY 4.0](LICENSE), subject to the exclusions in [`RIGHTS.md`](RIGHTS.md).
 Project-authored validation and workflow code are separately licensed under
 the [MIT License](tools/LICENSE). Third-party source artifacts retain their
 own terms. Citation metadata is available in [`CITATION.cff`](CITATION.cff).
+For a reproducible citation, use a versioned knowledge release when one is
+available; otherwise cite the exact Git commit and access date. Evidence
+bundles are not versions of the wiki.
 
 Before submitting a change, run:
 

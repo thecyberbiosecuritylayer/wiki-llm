@@ -32,63 +32,45 @@ Examples for a local clone:
 rg -n -i "synnovis|transfusion" wiki
 rg -n "RSK-0009|biological-to-digital" wiki
 rg -l '^type: governance$' wiki/governance
+rg -l '^type: incident$' wiki/incidents
 rg -l '^type: source$' wiki/sources
 ```
 
-## Core domain maps
+## Start here
 
-- [CON-0001 — Cyberbiosecurity](concepts/con-0001-cyberbiosecurity.md) — the
-  domain boundary and distinctions from biosafety, biosecurity, and
-  cybersecurity.
-- [SYN-0034 — What Is Cyberbiosecurity?](syntheses/syn-0034-what-is-cyberbiosecurity-public-explainer.md) —
-  an accessible explanation through dependencies, causal transitions,
-  documented examples, and evidentiary limits.
-- [SYN-0003](syntheses/syn-0003-cross-domain-transfer-directions.md) —
-  cyber-to-biological, biological-to-digital, and adjacent pathway classes.
-- [SYN-0032](syntheses/syn-0032-engineering-biology-lifecycle-threat-screening-governance-reconciliation.md)
-  — a broad engineering-biology lifecycle synthesis of threats, screening,
-  and governance.
-- [SYN-0029](syntheses/syn-0029-biological-ai-lifecycle-threat-benchmark-governance-reconciliation.md)
-  — biological-AI risks, benchmarks, controls, and governance limits.
-- [SYN-0031](syntheses/syn-0031-laboratory-threat-reverse-transfer-incident-reconciliation.md)
-  — laboratory reverse-transfer paths, incident evidence, and the limits of
-  causal conclusions.
-- [SYN-0001 — Coverage rubric](syntheses/syn-0001-coverage-rubric.md) — a
-  historical coverage-assessment tool, not evidence of completeness or
-  certification.
+- [CON-0001 — Cyberbiosecurity](concepts/con-0001-cyberbiosecurity.md) defines
+  the domain and its boundary with cybersecurity, biosecurity, and biosafety.
+- [SYN-0034 — What Is Cyberbiosecurity?](syntheses/syn-0034-what-is-cyberbiosecurity-public-explainer.md)
+  is the accessible public introduction.
+- [SYN-0003 — Cyber-biological transfer directions and mechanisms](syntheses/syn-0003-cross-domain-transfer-directions.md)
+  maps cyber-to-biological, biological-to-digital, and adjacent pathways.
 
-## Representative risk scenarios
+## Explore by domain
 
-- [RSK-0001](risk-scenarios/rsk-0001-hcl-containment-control-disruption.md) —
-  disruption of digitally supported containment functions in a high-
-  containment laboratory.
-- [RSK-0006](risk-scenarios/rsk-0006-transfusion-testing-disruption-supply-pressure.md)
-  — disruption of transfusion testing and resulting supply pressure.
-- [RSK-0009](risk-scenarios/rsk-0009-sequenced-input-to-digital-execution.md) —
-  biological input to digital execution.
-- [RSK-0021](risk-scenarios/rsk-0021-biological-test-input-to-digital-result-public-health-action.md)
-  — biological test input to digital result and public-health action.
+Use the primary entry as a route into the domain, follow the useful synthesis,
+workflow, risk, control, or incident branches, and combine the search patterns
+to discover the current corpus without treating this guide as a complete
+catalog.
 
-## Representative incidents and controls
+| Route | Primary entry | Useful branches | Suggested `rg` pattern fragments |
+| --- | --- | --- | --- |
+| Laboratories and biobanks | [SYN-0031 — Laboratory threat breadth and reverse-transfer incident reconciliation](syntheses/syn-0031-laboratory-threat-reverse-transfer-incident-reconciliation.md) | [SYN-0010 — Laboratory and biobank scope, asset and lifecycle reconciliation](syntheses/syn-0010-laboratory-biobank-scope-asset-lifecycle-reconciliation.md); [WFL-0010 — Clinical laboratory testing, reporting and correction lifecycle](workflows/wfl-0010-clinical-laboratory-testing-reporting-correction-lifecycle.md) | `high[- ]containment`, `clinical laborator`, `public[- ]health laborator`, `biobank`, `biospecimen`, `LIMS`, `transfusion` |
+| Genomics and human omics | [SYN-0021 — Genomic assets, lifecycle and system-boundary reconciliation](syntheses/syn-0021-genomic-assets-lifecycle-system-boundary-reconciliation.md) | [WFL-0005 — Genomic data lifecycle](workflows/wfl-0005-genomic-data-lifecycle.md); [RSK-0004 — Disclosure of human genomic data and kin privacy harm](risk-scenarios/rsk-0004-genomic-data-disclosure-kin-privacy.md) | `genomic[- ]data`, `human[- ]omics`, `sequenc`, `kin[- ]privacy`, `23andMe` |
+| Biomanufacturing and OT | [SYN-0028 — Biomanufacturing scope, threat, incident and governance reconciliation](syntheses/syn-0028-biomanufacturing-scope-threat-incident-governance-reconciliation.md) | [WFL-0003 — Biopharmaceutical manufacturing information and control flows](workflows/wfl-0003-biopharmaceutical-manufacturing-digital-thread.md); [INC-0006 — Merck NotPetya manufacturing and supply disruption, 2017](incidents/inc-0006-merck-notpetya-manufacturing-supply-disruption-2017.md) | `biomanufactur`, `biopharmaceutical`, `process[- ]control`, `digital[- ]thread`, `GxP`, `CGMP`, `operational[- ]technology`, `Merck` |
+| Agriculture and One Health | [SYN-0025 — Agriculture lifecycle, system, threat, transfer, consequence and control reconciliation](syntheses/syn-0025-agriculture-system-threat-transfer-consequence-control-reconciliation.md) | [SYN-0009 — Global and US One Health agriculture/environment scope reconciliation](syntheses/syn-0009-global-us-one-health-scope-reconciliation.md); [WFL-0012 — Animal and plant health surveillance, movement and response lifecycle](workflows/wfl-0012-animal-plant-health-surveillance-movement-response-lifecycle.md) | `agricultur`, `One[- ]Health`, `smart[- ]farm`, `animal[- ]health`, `plant[- ]health`, `IMSOC`, `food[- ]supply`, `veterinar` |
+| Engineering biology and synthesis screening | [SYN-0032 — Engineering-biology lifecycle, threat, screening and governance reconciliation](syntheses/syn-0032-engineering-biology-lifecycle-threat-screening-governance-reconciliation.md) | [WFL-0014 — Engineering-biology design-to-disposition lifecycle](workflows/wfl-0014-engineering-biology-design-to-disposition-lifecycle.md); [CTL-0024 — NIST-benchmarked nucleic-acid screening assurance](controls/ctl-0024-nist-benchmarked-nucleic-acid-screening-assurance.md) | `engineering[- ]biology`, `synthetic[- ]nucleic[- ]acid`, `synthesis[- ]screening`, `procurement[- ]screening`, `sequence[- ]screening`, `DBTL`, `benchtop` |
+| Biological AI | [SYN-0029 — Biological-AI lifecycle, threat, benchmark and governance reconciliation](syntheses/syn-0029-biological-ai-lifecycle-threat-benchmark-governance-reconciliation.md) | [WFL-0013 — Secure biological-AI model lifecycle from intake to retirement](workflows/wfl-0013-biological-ai-secure-model-lifecycle.md); [RSK-0016 — Biological-AI output to unsafe experimental or decision action](risk-scenarios/rsk-0016-biological-ai-output-to-unsafe-experimental-or-decision-action.md) | `biological[- ]AI`, `AI[- ]enabled`, `MLOps`, `model[- ]lifecycle`, `decision[- ]gate`, `protein[- ]model` |
+| Governance and jurisdiction | [SYN-0008 — Global, US, EU, UK and Canada governance modality and actor reconciliation](syntheses/syn-0008-global-us-eu-uk-canada-governance-reconciliation.md) | [SYN-0004 — US–EU human-omics and electronic-health-data governance reconciliation](syntheses/syn-0004-us-eu-human-omics-health-data-governance.md); [SYN-0002 — US–UK synthetic nucleic-acid procurement screening comparison](syntheses/syn-0002-us-uk-nucleic-acid-screening-comparison.md) | `jurisdiction`, `issuer`, `document_type`, `instrument_status`, `binding_status`, `effective_date` |
+| Documented incidents | [INC-0001 — Synnovis cyberattack and transfusion-service disruption](incidents/inc-0001-synnovis-transfusion-disruption-2024.md) | [INC-0008 — Immensa PCR incorrect-negative reporting incident, 2021](incidents/inc-0008-immensa-pcr-false-negative-reporting-2021.md); [INC-0007 — 23andMe credential-stuffing and linked genetic-profile breach, 2023](incidents/inc-0007-23andme-genetic-data-breach-2023.md) | `ransomware`, `credential[- ]stuffing`, `incorrect[- ]negative`, `disruption`, `confirmed[- ]impact`, `reported[- ]vector`, `attribution` |
 
-- [INC-0001](incidents/inc-0001-synnovis-transfusion-disruption-2024.md) — the
-  Synnovis transfusion disruption.
-- [INC-0005](incidents/inc-0005-anonymous-chicken-farm-temperature-control-animal-deaths-2023.md)
-  — an anonymous chicken-farm report and an example of weak nested evidence
-  lineage.
-- [INC-0008](incidents/inc-0008-immensa-pcr-false-negative-reporting-2021.md) —
-  Immensa false-negative reporting as an observed, non-malicious reverse path.
-- [CTL-0016](controls/ctl-0016-biological-ai-provenance-validation-decision-gates.md)
-  — biological-AI provenance and decision gates.
-- [CTL-0021](controls/ctl-0021-secure-monitored-biological-ai-lifecycle-controls.md)
-  — secure, monitored biological-AI lifecycle controls.
+Fragments ending mid-word, such as `sequenc`, intentionally match inflections;
+`[- ]` matches either a hyphen or a space. Combine a row's fragments with `|` in
+an `rg -n -i 'PATTERN' wiki` search. For a complete list of governance or
+incident pages, use the type-specific `rg -l` commands above. Search patterns
+aid discovery but do not establish corpus completeness.
 
-## Governance starting points
-
-- [SYN-0002](syntheses/syn-0002-us-uk-nucleic-acid-screening-comparison.md) — a
-  comparison of US and UK nucleic-acid screening frameworks.
-- [GOV-0025](governance/gov-0025-eu-ai-act-life-sciences-applicability.md) — EU
-  AI Act applicability to life sciences, medical devices, and IVD AI.
+These routes are navigation, not evidence. Resolve material claims through the
+cited `SRC` pages and their source locators.
 
 Current laws, standards, guidance, product capabilities, and institutional
 statuses are time-sensitive. Always check the `As of`, `Review after`,
@@ -118,17 +100,29 @@ syntheses/       cross-source comparisons and durable analyses
 questions/       open evidence gaps
 ```
 
+The `organizations/` directory is created when the first reusable `ORG` page is
+activated; an absent directory does not remove that reserved page type.
+
 ## Supporting pages
 
 - [Glossary](glossary.md) — terminology and disambiguation.
 - [ID registry](id-registry.md) — issued, active, and retired page IDs.
+- [SYN-0001 — Coverage rubric](syntheses/syn-0001-coverage-rubric.md) — a
+  historical coverage-assessment tool, not evidence of completeness or
+  certification.
 - [Public changelog](../CHANGELOG.md) — publication history; not factual evidence.
-- `_templates/` — simple templates for new pages.
+- [Maintainer authority](../MAINTAINERS.md) and
+  [release policy](../RELEASES.md) — project procedure; not factual evidence.
+- [`_templates/`](_templates/) — simple templates for new pages.
+
+Many synthesis pages ending in `reconciliation` are structured evidence-
+integration checkpoints. They expose scope, conflicts, and unresolved gaps;
+they are not certifications or interchangeable public introductions.
 
 ## Minimal workflow
 
 ```text
-raw source
+source URL or explicitly approved local artifact
 → one SRC page
 → updates to existing topic/risk pages
 → review evidence, relative links, and the Markdown diff

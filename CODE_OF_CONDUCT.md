@@ -75,6 +75,8 @@ When an incident does occur, it is important to report it promptly. Report a
 possible violation through the private route described in
 [`SECURITY.md`](SECURITY.md), using the title prefix `Conduct report:`. Do not
 open a public issue or pull request containing conduct-report details.
+The current Community Moderator is identified in
+[`MAINTAINERS.md`](MAINTAINERS.md).
 
 Community Moderators take reports of violations seriously and will make every
 effort to respond in a timely manner. They will investigate all reports of code
@@ -134,7 +136,7 @@ violation, lower rungs on the ladder may be skipped.
    3. **Repair:** There is no possible repair in cases of this severity.
 
 This enforcement ladder is intended as a guideline. It does not limit the
-ability of Community Managers to use their discretion and judgment, in keeping
+ability of Community Moderators to use their discretion and judgment, in keeping
 with the best interests of our community.
 
 ## Scope
