@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this knowledge base, please cite it using this metadata."
+title: "Cyberbiosecurity Wiki"
+type: dataset
+repository-code: "https://github.com/thecyberbiosecuritylayer/wiki-llm"
+url: "https://github.com/thecyberbiosecuritylayer/wiki-llm"
+authors:
+  - name: "Cyberbiosecurity Wiki contributors"
+date-released: 2026-07-16
+license: CC-BY-4.0
+abstract: >-
+  An evidence-based Markdown knowledge base about operational dependencies and
+  risks at the boundary between digital and biological systems. The CC BY 4.0
+  license applies to original Markdown and project documentation; third-party
+  raw artifacts and other excluded material retain their own terms as described
+  in RIGHTS.md and RAW_SOURCES.md.
+keywords:
+  - cyberbiosecurity
+  - biosecurity
+  - cybersecurity
+  - knowledge base
+  - risk

@@ -1,0 +1,58 @@
+name: Evidence correction
+description: Report a claim, source, locator, scope, or uncertainty problem.
+title: "[Evidence correction]: "
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Use this form for public, non-sensitive corrections. Follow SECURITY.md
+        instead if the report contains personal data, re-identification detail,
+        credentials, sensitive biological capability, or an undisclosed
+        vulnerability.
+  - type: input
+    id: page
+    attributes:
+      label: Affected page or claim
+      description: Provide the relative path and page or claim ID.
+      placeholder: wiki/risk-scenarios/rsk-0001-example.md — RSK-0001-C01
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current statement
+      description: Quote only the minimum text needed to locate the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      description: Explain what should change and why.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence and locator
+      description: >-
+        Give the original source, canonical URL or DOI, version/date, and the
+        most precise page, section, table, figure, paragraph, or timestamp.
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: Scope and limits
+      description: Note jurisdiction, population, system, uncertainty, or conflicts.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-report confirmation
+      options:
+        - label: >-
+            This report contains no personal data, re-identification detail,
+            credentials, restricted material, or operationally harmful content.
+          required: true

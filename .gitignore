@@ -1,0 +1,29 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# Defensive default: credentials never belong in this public-source corpus.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Raw evidence remains immutable and outside Git history. The public policy
+# document is tracked; reviewed redistributable copies are published only as a
+# separately versioned release artifact.
+raw/*
+!raw/README.md
+
+# Local recovery archives are deliberately kept outside version history.
+.p0-snapshots/
+
+# Local diagnostic scratch output.
+audit/validation/
+audit/*.tmp

@@ -1,0 +1,84 @@
+name: New source proposal
+description: Propose a public source for evidence review and possible integration.
+title: "[Source proposal]: "
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Propose one intellectual source at a time. Do not upload or commit a raw
+        artifact; provide its canonical public locator for rights, privacy, and
+        safety review first.
+  - type: textarea
+    id: identity
+    attributes:
+      label: Bibliographic identity
+      description: Give the title, authors or issuer, publication, and publication date.
+    validations:
+      required: true
+  - type: input
+    id: locator
+    attributes:
+      label: Canonical URL or DOI
+      placeholder: https://doi.org/...
+    validations:
+      required: true
+  - type: textarea
+    id: version
+    attributes:
+      label: Version and access information
+      description: >-
+        Identify the edition, revision, publication status, access date, and
+        any supplement or appendix needed to interpret the source.
+    validations:
+      required: true
+  - type: textarea
+    id: relevance
+    attributes:
+      label: Cyberbiosecurity relevance
+      description: >-
+        Connect a biological asset or consequence, a digital dependency or
+        data flow, and the resulting security, safety, privacy, quality,
+        resilience, or governance implication.
+    validations:
+      required: true
+  - type: textarea
+    id: contribution
+    attributes:
+      label: Expected evidence contribution
+      description: >-
+        State which existing page or question this source may update and the
+        decision-relevant claims it may support, contradict, or limit.
+    validations:
+      required: true
+  - type: textarea
+    id: methods
+    attributes:
+      label: Methods, scope, and known limitations
+      description: >-
+        Include study design, population, jurisdiction, sample size, endpoints,
+        evidence type, conflicts, and unread or unavailable material as relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: rights
+    attributes:
+      label: Access, rights, privacy, and dual-use notes
+      description: >-
+        Describe access and license information and flag any personal,
+        controlled, restricted, re-identification, or dual-use concern without
+        reproducing sensitive detail.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Proposal confirmation
+      options:
+        - label: I searched existing SRC pages by title, URL, DOI, and version.
+          required: true
+        - label: I have not attached or committed a raw source artifact.
+          required: true
+        - label: >-
+            This public proposal contains no personal data, credentials,
+            restricted material, or operationally harmful detail.
+          required: true
