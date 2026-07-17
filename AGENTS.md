@@ -16,7 +16,9 @@ wiki/sources/        one provenance note (`SRC`) per source
 wiki/<page-type>/    reusable knowledge and synthesis in Markdown
 wiki/index.md        navigation and the knowledge cutoff
 wiki/id-registry.md  stable page identities
-CHANGELOG.md          public release history, not evidence
+CHANGELOG.md         public release history, not evidence
+MAINTAINERS.md       project authority, not evidence
+RELEASES.md          publication contract, not evidence
 ```
 
 - Never edit, rename, move, normalize, or delete an existing file under `raw/`.
@@ -33,8 +35,10 @@ CHANGELOG.md          public release history, not evidence
   An identical duplicate does not.
 - Topic pages synthesize sources. They are not evidence for other topic pages;
   cite the underlying `SRC` and its source locator.
-- Treat `index.md` as navigation, `id-registry.md` as identity history, and
-  `CHANGELOG.md` as release history. Do not use any of them as factual evidence.
+- Treat `index.md` as navigation, `id-registry.md` as identity history,
+  `CHANGELOG.md` as release history, `MAINTAINERS.md` as project authority, and
+  `RELEASES.md` as publication procedure. Do not use any of them as factual
+  evidence.
 - Existing pages may contain additional machine-maintained frontmatter. Preserve
   fields you do not need to change. Do not hand-maintain redundant counts,
   backlinks, hashes, or bookkeeping merely for appearance.
@@ -369,6 +373,13 @@ State the question, scope, date cutoff, method, evidence base, findings,
 counterevidence, assumptions, confidence, implications, and open questions. Add
 structure or reconciliation rather than repeating source summaries.
 
+### Question (`QUE`)
+
+State one falsifiable evidence gap, why it matters, its scope, the current
+evidence, resolution criteria, evidence needed, and the search state and limits.
+For a negative search result, record the search scope and date. Do not convert
+an absence of located evidence into a claim of absence.
+
 ## Human notes and untrusted content
 
 Never alter text between these markers:
@@ -440,6 +451,13 @@ git status --short
 
 Preserve unrelated user changes. Do not use destructive Git commands. Do not
 commit, tag, merge, or push unless the user explicitly asks.
+
+Knowledge-base releases and evidence bundles are separate publication tracks.
+Follow `RELEASES.md`; do not represent an evidence bundle as a version of the
+wiki. A version heading, `CITATION.cff` version and date, Git tag, and GitHub
+knowledge release must describe the same commit and be published as one
+transaction. An LLM or automation agent may prepare that transaction but cannot
+authorize it.
 
 While working:
 

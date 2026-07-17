@@ -20,11 +20,13 @@ dual_use: low
 ## Evidence of implementation or effectiveness
 
 <!-- Keep this block only for a decision-relevant claim. Claim, Evidence, and
-Limits are required; the remaining fields are optional. -->
+Limits are required; the remaining fields are optional. Replace the example ID
+and path and remove its surrounding backticks so Evidence contains a working
+relative link. -->
 
 > **Claim record — CTL-0000-C01 | analytic-judgment**
 > **Claim:** What the evidence establishes about this control.
-> **Evidence:** `SRC-0000`, precise source locator.
+> **Evidence:** `[SRC-0000](../sources/src-0000-title.md)`, precise source locator.
 > **Limits:** Distinguish proposed, recommended, implemented, tested, and independently evaluated states.
 <!-- Optional claim fields; uncomment only when meaningful. Confidence accepts
 only low, medium, or high; put any rationale in Limits or nearby prose.

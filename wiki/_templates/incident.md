@@ -20,11 +20,13 @@ date unknown rather than substituting a different date.
 
 ## Confirmed impact
 
-<!-- Keep this block only for a decision-relevant claim. -->
+<!-- Keep this block only for a decision-relevant claim. Replace the example ID
+and path and remove its surrounding backticks so Evidence contains a working
+relative link. -->
 
 > **Claim record — INC-0000-C01 | source-report**
 > **Claim:** What a named source reports about the event or impact.
-> **Evidence:** `SRC-0000`, precise source locator.
+> **Evidence:** `[SRC-0000](../sources/src-0000-title.md)`, precise source locator.
 > **Limits:** Separate confirmed impact from cause, intent, vector, and attribution.
 <!-- Optional claim fields; uncomment only when meaningful. Confidence accepts
 only low, medium, or high; put any rationale in Limits or nearby prose.

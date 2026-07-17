@@ -19,11 +19,13 @@ quality, resilience, or governance implication.
 ## Current understanding
 
 <!-- Keep this block only for a decision-relevant claim. Claim, Evidence, and
-Limits are required; the remaining fields are optional. -->
+Limits are required; the remaining fields are optional. Replace the example ID
+and path and remove its surrounding backticks so Evidence contains a working
+relative link. -->
 
 > **Claim record — CON-0000-C01 | analytic-judgment**
 > **Claim:** Concise, falsifiable statement.
-> **Evidence:** `SRC-0000`, precise source locator.
+> **Evidence:** `[SRC-0000](../sources/src-0000-title.md)`, precise source locator.
 > **Limits:** What the cited evidence does not establish.
 <!-- Optional claim fields; uncomment only when meaningful. Confidence accepts
 only low, medium, or high; put any rationale in Limits or nearby prose.

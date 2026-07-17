@@ -28,11 +28,13 @@ Name the transfer mechanism: data, control, custody, decision, or material.
 
 ## Receiving-domain state and consequences
 
-<!-- Keep this block only for a decision-relevant claim. -->
+<!-- Keep this block only for a decision-relevant claim. Replace the example ID
+and path and remove its surrounding backticks so Evidence contains a working
+relative link. -->
 
 > **Claim record — RSK-0000-C01 | analytic-judgment**
 > **Claim:** Falsifiable statement about the represented path.
-> **Evidence:** `SRC-0000`, precise source locator.
+> **Evidence:** `[SRC-0000](../sources/src-0000-title.md)`, precise source locator.
 > **Limits:** Distinguish observed nodes from inferred or hypothetical links.
 <!-- Optional claim fields; uncomment only when meaningful. Confidence accepts
 only low, medium, or high; put any rationale in Limits or nearby prose.

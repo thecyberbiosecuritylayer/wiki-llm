@@ -1,13 +1,33 @@
 # Changelog
 
-The format follows Keep a Changelog. Versions describe knowledge-base releases;
-they do not certify that every source or conclusion is complete, current, or
+The format follows Keep a Changelog and the publication semantics in
+[`RELEASES.md`](RELEASES.md). Versions describe knowledge-base snapshots; they
+do not certify that every source or conclusion is complete, current, or
 universally applicable.
 
 ## [Unreleased]
 
+### Added
+
+- A structured thematic guide in `wiki/index.md` connects domain-level
+  syntheses to narrower workflows, risks, controls, incidents, and search
+  vocabulary without duplicating a complete catalog.
+- Maintainer authority and the two distinct release tracks are documented in
+  `MAINTAINERS.md` and `RELEASES.md`.
+- A structure-proposal issue form provides a public route for reusable-page,
+  navigation, schema, and maintenance-contract changes.
+- Dedicated synthesis and open-question templates cover the two page types
+  previously missing from the public authoring surface.
+
 ### Changed
 
+- The repository landing page, contribution route, and human quickstart now
+  provide shorter public entry paths while preserving `AGENTS.md` as the full
+  normative contract for LLM-assisted and automated maintenance.
+- Security guidance now points directly to the enabled private vulnerability-
+  reporting route.
+- Citation metadata no longer presents an evidence-bundle date as a versioned
+  release of the knowledge base.
 - English is now the canonical language of the repository.
 - Reader-facing content was standardized as ordinary GitHub-compatible
   Markdown that requires neither a custom renderer nor maintenance scripts to
@@ -31,6 +51,10 @@ universally applicable.
   automated validation surfaces were added for an open knowledge workflow.
 
 ## [0.1.0] - 2026-07-13
+
+This initial corpus checkpoint predates the current public Git history and has
+no corresponding public tag. A later commit must not be tagged retroactively as
+this historical state.
 
 ### Added
 

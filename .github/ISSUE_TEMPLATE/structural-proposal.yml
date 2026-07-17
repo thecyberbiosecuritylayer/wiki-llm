@@ -1,0 +1,67 @@
+name: Structure or reusable-page proposal
+description: Propose a new reusable entity or a change to navigation, schema, or the maintenance contract.
+title: "[Structure proposal]: "
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Use this form for public, non-sensitive structural proposals. Use the
+        evidence-correction or new-source form when either one fits. Follow
+        SECURITY.md instead if the proposal itself would expose sensitive
+        details.
+  - type: input
+    id: change
+    attributes:
+      label: Proposed change
+      description: Name the reusable page, page type, navigation change, schema change, or maintenance rule.
+      placeholder: Add a reusable workflow page for...
+    validations:
+      required: true
+  - type: textarea
+    id: need
+    attributes:
+      label: Why it is needed
+      description: >-
+        Explain the recurring reader or LLM task this change would support and
+        why an existing page or rule is insufficient.
+    validations:
+      required: true
+  - type: textarea
+    id: search
+    attributes:
+      label: Existing material checked
+      description: >-
+        List the titles, aliases, IDs, URLs, and terms searched, plus the pages
+        that could be reused or affected. Do not allocate a new ID yet.
+    validations:
+      required: true
+  - type: textarea
+    id: contract
+    attributes:
+      label: Evidence and maintenance-contract impact
+      description: >-
+        Describe effects on provenance, stable IDs, links, templates,
+        validation, compatibility, or the knowledge cutoff. Write "none" when
+        a category is not affected.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Smaller alternatives and risks
+      description: >-
+        Note simpler options considered and any privacy, rights, sensitivity,
+        dual-use, migration, or maintenance risk.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Proposal confirmation
+      options:
+        - label: I searched the wiki and ID registry before proposing a new reusable page.
+          required: true
+        - label: I have not allocated an ID or added a raw artifact.
+          required: true
+        - label: This public proposal contains no sensitive or operationally harmful detail.
+          required: true

@@ -20,11 +20,13 @@ covered actors, and exclusions in prose or a small table.
 
 ## Cyberbiosecurity relevance and control mappings
 
-<!-- Keep this block only for a decision-relevant claim. -->
+<!-- Keep this block only for a decision-relevant claim. Replace the example ID
+and path and remove its surrounding backticks so Evidence contains a working
+relative link. -->
 
 > **Claim record — GOV-0000-C01 | source-report**
 > **Claim:** What the official instrument states.
-> **Evidence:** `SRC-0000`, section or paragraph.
+> **Evidence:** `[SRC-0000](../sources/src-0000-title.md)`, section or paragraph.
 > **Limits:** Do not generalize beyond its jurisdiction, actors, version, or force.
 <!-- Optional claim fields; uncomment only when meaningful. Confidence accepts
 only low, medium, or high; put any rationale in Limits or nearby prose.

@@ -71,6 +71,28 @@ TEXT_SUFFIXES = {
     ".yml",
 }
 TEXT_NAMES = {".gitattributes", ".gitignore", "LICENSE"}
+REQUIRED_PROJECT_PATHS = {
+    ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/ISSUE_TEMPLATE/evidence-correction.yml",
+    ".github/ISSUE_TEMPLATE/new-source.yml",
+    ".github/ISSUE_TEMPLATE/structural-proposal.yml",
+    ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/workflows/check.yml",
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "CITATION.cff",
+    "MAINTAINERS.md",
+    "RELEASES.md",
+    "wiki/_templates/control.md",
+    "wiki/_templates/governance.md",
+    "wiki/_templates/incident.md",
+    "wiki/_templates/question.md",
+    "wiki/_templates/risk-scenario.md",
+    "wiki/_templates/source.md",
+    "wiki/_templates/synthesis.md",
+    "wiki/_templates/topic.md",
+}
+UNPUBLISHED_CHANGELOG_CHECKPOINTS = {("0.1.0", "2026-07-13")}
 
 
 @dataclass(frozen=True)
@@ -137,6 +159,7 @@ class Checker:
     def run(self) -> int:
         self._inventory_public_files()
         self._check_text_files()
+        self._check_project_contracts()
         self._read_pages()
         self._index_claims_and_relations()
         self._check_registry()
@@ -237,6 +260,82 @@ class Checker:
                 if obsidian >= 0:
                     line = text.count("\n", 0, obsidian) + 1
                     self.error(path, "Obsidian-style [[ links are not allowed", line)
+
+    def _check_project_contracts(self) -> None:
+        for rel in sorted(REQUIRED_PROJECT_PATHS):
+            if rel not in self.public_paths:
+                self.error(
+                    ROOT / rel,
+                    "missing required project contract, contribution route, or page template",
+                )
+
+        citation_path = ROOT / "CITATION.cff"
+        changelog_path = ROOT / "CHANGELOG.md"
+        try:
+            citation = citation_path.read_text(encoding="utf-8")
+        except OSError as exc:
+            self.error(citation_path, f"cannot read citation metadata: {exc}")
+            return
+        changelog = self.markdown.get("CHANGELOG.md")
+        if changelog is None:
+            self.error(changelog_path, "missing public changelog")
+            return
+
+        version_match = re.search(
+            r'^version:\s*["\']?([0-9]+\.[0-9]+\.[0-9]+)["\']?\s*$',
+            citation,
+            re.MULTILINE,
+        )
+        date_match = re.search(
+            r'^date-released:\s*["\']?([0-9]{4}-[0-9]{2}-[0-9]{2})["\']?\s*$',
+            citation,
+            re.MULTILINE,
+        )
+        if bool(version_match) != bool(date_match):
+            self.error(
+                citation_path,
+                "version and date-released must either both be present or both be absent",
+            )
+            return
+
+        released = re.findall(
+            r"^## \[([0-9]+\.[0-9]+\.[0-9]+)\] - ([0-9]{4}-[0-9]{2}-[0-9]{2})$",
+            changelog,
+            re.MULTILINE,
+        )
+        if not released:
+            if version_match is not None:
+                self.error(
+                    changelog_path,
+                    "citation metadata declares a release absent from the changelog",
+                )
+            return
+        newest_release = max(
+            released,
+            key=lambda item: tuple(int(part) for part in item[0].split(".")),
+        )
+        if version_match is None or date_match is None:
+            if newest_release not in UNPUBLISHED_CHANGELOG_CHECKPOINTS:
+                self.error(
+                    citation_path,
+                    "the newest changelog release requires matching version and "
+                    "date-released fields",
+                )
+            return
+
+        citation_release = (version_match.group(1), date_match.group(1))
+        if citation_release in UNPUBLISHED_CHANGELOG_CHECKPOINTS:
+            self.error(
+                citation_path,
+                "citation metadata must not present the untagged 0.1.0 checkpoint "
+                "as a public knowledge release",
+            )
+        elif citation_release != newest_release:
+            self.error(
+                citation_path,
+                "citation version/date do not match the newest released changelog heading "
+                f"{newest_release[0]} ({newest_release[1]})",
+            )
 
     def _read_pages(self) -> None:
         filenames: dict[str, Page] = {}
